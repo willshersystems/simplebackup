@@ -1,0 +1,4 @@
+source $HOME/.backup/settings
+
+[[ -f $BACKUP_SETS ]] || { echo "Backup sets file $BACKUP_SETS doesn't exist"; exit 1; }
+

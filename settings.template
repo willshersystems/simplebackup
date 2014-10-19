@@ -1,0 +1,14 @@
+# Set the following vars and put file in /root/.backups/settings
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export PASSPHRASE=
+export BUCKET_NAME=
+
+export FULL_FREQ='4W'
+export NUM_FULL='2'
+
+export DUPLICITY_ARGS='--s3-use-new-style --s3-european-buckets --no-print-statistics -ve'
+export BACKUP_URI="${BUCKET_URI}/$HOSTNAME"
+export BACKUP_SETS=$HOME/.backup/sets
+export BUCKET_URI="s3://s3-eu-west-1.amazonaws.com/$BUCKET_NAME"
+

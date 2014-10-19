@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+[[ $# -ge 1 ]] ||  { echo "  usage: "$(basename $0) path [--time time]; exit 1; }
+
+path=$( readlink -e $1 )
+shift
+
+source $( dirname $0 )/backup_library
+
+backup_set=$( echo $path | grep -o -f /root/.backup/sets )
+rel_path=${path#${backup_set}/}
+
+[[ $? -ne 0 ]] && { echo " ERROR: There is no backup set containing $path" >&2; exit 1; }
+
+[[ -e $path ]] && suffix=.RESTORED
+
+echo Restoring to ${path}$suffix
+
+duplicity $DUPLICITY_ARGS restore \
+	--file-to-restore=$rel_path \
+	${BACKUP_URI}$backup_set ${path}$suffix $* 
+

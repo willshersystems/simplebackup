@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $( dirname $0 )/backup_library
+
+cat $BACKUP_SETS
+
