@@ -1,0 +1,9 @@
+config_file="$( dirname $0 )/../etc/settings"
+[[ -f $config_file ]] || {
+  echo "Config file not found at $config_file"
+  exit 1
+}
+source $( dirname $0 )/../etc/settings
+
+[[ -f $BACKUP_SETS ]] || { echo "Backup sets file $BACKUP_SETS doesn't exist"; exit 1; }
+

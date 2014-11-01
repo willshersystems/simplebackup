@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $( dirname $0 )/backup_configuration
+
+cat $BACKUP_SETS
+

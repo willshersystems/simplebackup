@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+source $( dirname $0 )/backup_configuration
+
+while read dir
+do
+        absdir=$(readlink -e $dir)
+  duplicity $DUPLICITY_ARGS verify\
+    ${BACKUP_URI}$absdir $absdir $* -v4
+done <$BACKUP_SETS
+

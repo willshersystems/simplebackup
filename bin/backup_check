@@ -1,11 +1,11 @@
 #!/bin/bash 
 
-source $( dirname $0 )/backup_library
+source $( dirname $0 )/backup_configuration
 
 while read dir
 do
         absdir=$(readlink -e $dir)
-	duplicity $DUPLICITY_ARGS list-current-files\
+	duplicity $DUPLICITY_ARGS collection-status\
 		${BACKUP_URI}$absdir $*
 done <$BACKUP_SETS
 
