@@ -1,6 +1,7 @@
 # This is Simple backup
 
 To get started, copy the etc/settings.template to etc/settings and edit to your requirements.
+Edit etc/sets, to contain the locations to backup, one per line. Backups are recursive.
 
 ## Commands
 
@@ -18,7 +19,8 @@ To get started, copy the etc/settings.template to etc/settings and edit to your 
 
 Create a bucket, `$CLIENTNAME.backups.willsher.systems`
 
-Create a new IAM user, with the following policy:
+Create a new IAM user, $CLIENTNAME, with the following policy. Generate
+access keys
 
 ```
 {

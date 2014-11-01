@@ -7,6 +7,6 @@ export FULL_FREQ='4W'
 export NUM_FULL='2'
 
 export DUPLICITY_ARGS='--s3-use-new-style --s3-european-buckets --no-print-statistics -ve'
-export BACKUP_URI="${BUCKET_URI}/$HOSTNAME"
 export BUCKET_URI="s3://s3-eu-west-1.amazonaws.com/$BUCKET_NAME"
+export BACKUP_URI="${BUCKET_URI}/$HOSTNAME"
 
