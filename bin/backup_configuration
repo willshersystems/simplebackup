@@ -5,5 +5,7 @@ config_file="$( dirname $0 )/../etc/settings"
 }
 source $( dirname $0 )/../etc/settings
 
+BACKUP_SETS="$( dirname $0 )/../etc/sets"¬
+
 [[ -f $BACKUP_SETS ]] || { echo "Backup sets file $BACKUP_SETS doesn't exist"; exit 1; }
 

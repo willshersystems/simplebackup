@@ -7,7 +7,7 @@ shift
 
 source $( dirname $0 )/backup_configuration
 
-backup_set=$( echo $path | grep -o -f /root/.backup/sets )
+backup_set=$( echo $path | grep -o -f $BACKUP_SETS )
 rel_path=${path#${backup_set}/}
 
 [[ $? -ne 0 ]] && { echo " ERROR: There is no backup set containing $path" >&2; exit 1; }
