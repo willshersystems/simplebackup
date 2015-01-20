@@ -1,4 +1,6 @@
-# This is Simple backup
+# This is Simple Backup
+
+It's a simple set of scripts that leverage [duplicity](http://duplicity.nongnu.org) to do file backups to S3. It might even work with other destinations, but that's not tested.
 
 To get started, copy the etc/settings.template to etc/settings and edit to your requirements.
 Edit etc/sets, to contain the locations to backup, one per line. Backups are recursive.
