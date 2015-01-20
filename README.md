@@ -17,9 +17,9 @@ Edit etc/sets, to contain the locations to backup, one per line. Backups are rec
 
 ## S3 set up
 
-Create a bucket, `$CLIENTNAME.backups.willsher.systems`
+Create a bucket, $BUCKET
 
-Create a new IAM user, $CLIENTNAME, with the following policy. Generate
+Create a new IAM user, $BACKUPUSER, with the following policy. Generate
 access keys
 
 ```
@@ -36,8 +36,8 @@ access keys
       ],
       "Sid": "Stmt1379794867000",
       "Resource": [
-        "arn:aws:s3:::$CLIENTNAME.backups.willsher.systems/*",
-        "arn:aws:s3:::$CLIENTNAME.backups.willsher.systems"
+        "arn:aws:s3:::$BUCKET/*",
+        "arn:aws:s3:::$BUCKET"
       ],
       "Effect": "Allow"
     }
