@@ -46,3 +46,14 @@ access keys
   ]
 }
 ```
+
+# License
+
+LGPLv3
+
+# Author
+
+Matt Willsher <matt@willsher.systems>
+
+&copy; 2015 Willsher Systems
+
