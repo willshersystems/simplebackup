@@ -7,5 +7,5 @@ do
         absdir=$(readlink -e $dir)
 	duplicity $DUPLICITY_ARGS \
 		remove-all-but-n-full $NUM_FULL \
-		${BACKUP_URI}$absdir $*
+		${BACKUP_URI}$absdir --force $*
 done <$BACKUP_SETS
